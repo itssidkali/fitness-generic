@@ -80,10 +80,10 @@ button{font:500 15.5px Inter,system-ui,sans-serif;padding:15px 22px;border-radiu
 </head>
 <body>
 <div class="wrap">
-  <div class="top"><div class="brand"><div class="mark">A</div><div><div class="bn">AGEKASRI</div><div class="bt">Onboarding Form</div></div></div><div class="badge" id="bd">About 4 min</div></div>
+  <div class="top"><div class="brand"><div class="mark">A</div><div><div class="bn">Handled by Kali Srivastava</div><div class="bt">Onboarding Form</div></div></div><div class="badge" id="bd">About 4 min</div></div>
   <div class="prog" id="pg" style="display:none"><div class="segs" id="sg"></div><div class="pl"><span id="pl1"></span><span id="pl2"></span></div></div>
   <div class="card" id="c"></div>
-  <div class="foot">Agekasri · Personal coaching, built around you</div>
+  <div class="foot">Handled by Kali Srivastava · Fitness Coach, built around you</div>
 </div>
 <script>
 // COACH SETTING: your WhatsApp number with country code, digits only (e.g. 919876543210)
@@ -171,7 +171,7 @@ c.addEventListener("click",function(e){var t=e.target.closest(".chip,.tile");if(
 function inp(e){var t=e.target;if(t.dataset&&t.dataset.k){D[t.dataset.k]=t.value;if(t.type=="range")document.getElementById("rv").textContent=t.value+" / 10";var fe=t.closest(".f");if(fe&&has(t.value))fe.classList.remove("bad");save()}}
 c.addEventListener("input",inp);c.addEventListener("change",inp);
 c.addEventListener("keydown",function(e){if(e.key=="Enter"&&e.target.tagName=="INPUT"&&n>=0&&n<S.length){e.preventDefault();go(1)}});
-function summary(){var o=["AGEKASRI — CLIENT ONBOARDING",""];
+function summary(){var o=["Handled by Kali Srivastava — CLIENT ONBOARDING",""];
   S.forEach(function(s){o.push(s.t.toUpperCase());s.f.forEach(function(f){var v=D[f.k];if(has(v))o.push(LB[f.k]+": "+(Array.isArray(v)?v.join(", "):v+(f.k=="mot"?"/10":"")))});o.push("")});return o.join("\n").trim()}
 function cp(){var b=document.getElementById("cb");try{navigator.clipboard.writeText(summary()).then(function(){b.textContent="Copied"},function(){b.textContent="Copy failed"})}catch(e){b.textContent="Copy failed"}}
 function wa(){window.open("https://wa.me/"+COACH_WA+"?text="+encodeURIComponent(summary()),"_blank")}
