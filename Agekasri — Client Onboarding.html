@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Agekasri — Client Onboarding</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#eef2f6;--card:#fff;--ink:#0d1421;--mute:#5b6a80;--line:#d9e1ea;--sel:#0d1421;--onsel:#fff;--soft:#e7edf4;--soft2:#f6f8fb;--acc:#2f4466;--err:#b3261e;--shadow:0 12px 40px rgba(13,20,33,.10);--hbtn:#e9eff4;--onh:#0d1421;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0a101c;--card:#111a2c;--ink:#eef3f8;--mute:#93a3ba;--line:#24324d;--sel:#d6e1e8;--onsel:#0d1421;--soft:#1a2740;--soft2:#0d1626;--acc:#9fb4d0;--err:#ff8a80;--shadow:0 12px 40px rgba(0,0,0,.4)}}
+:root[data-theme="dark"]{--bg:#0a101c;--card:#111a2c;--ink:#eef3f8;--mute:#93a3ba;--line:#24324d;--sel:#d6e1e8;--onsel:#0d1421;--soft:#1a2740;--soft2:#0d1626;--acc:#9fb4d0;--err:#ff8a80;--shadow:0 12px 40px rgba(0,0,0,.4)}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+.wrap{max-width:680px;margin:0 auto;padding:18px 16px 24px}
+.top{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
+.brand{display:flex;align-items:center;gap:12px}
+.mark{width:36px;height:36px;border-radius:9px;background:var(--sel);color:var(--onsel);display:grid;place-items:center;font-weight:600;font-size:17px}
+.bn{font-weight:600;font-size:15px;letter-spacing:3px;line-height:1}
+.bt{font-size:11px;letter-spacing:1.5px;color:var(--mute);margin-top:5px;text-transform:uppercase}
+.badge{font-size:12.5px;color:var(--mute);font-weight:500}
+.prog{margin-bottom:14px}
+.segs{display:flex;gap:5px}.segs i{flex:1;height:4px;border-radius:9px;background:var(--line);transition:background .3s}.segs i.d{background:var(--sel)}.segs i.a{background:var(--acc)}
+.pl{display:flex;justify-content:space-between;font-size:12.5px;color:var(--mute);margin-top:8px;font-weight:500}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);overflow:hidden;animation:in .3s ease}
+@keyframes in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.ch{background:linear-gradient(135deg,#0d1421 0%,#1a2742 100%);color:#fff;padding:28px 22px}
+.ch h2{margin:0 0 6px;font-size:24px;line-height:1.25;font-weight:600;letter-spacing:-.3px}
+.ch p{margin:0;color:#b8c6d8;font-size:15px}
+.cb{padding:26px 22px 0}
+.f{margin-bottom:24px}
+label{display:block;font-weight:500;font-size:14px;margin-bottom:8px}
+.req{color:var(--err)}.opt-l{color:var(--mute);font-weight:400;font-size:12.5px}
+input,select,textarea{width:100%;padding:14px;font:inherit;font-size:16px;color:var(--ink);background:var(--soft2);border:1px solid var(--line);border-radius:10px;outline:none;transition:border .15s,box-shadow .15s;appearance:none;-webkit-appearance:none}
+select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none' stroke='%235b6a80' stroke-width='2'%3E%3Cpath d='M1 1l5 5 5-5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:38px}
+input:focus,select:focus,textarea:focus{border-color:var(--acc);box-shadow:0 0 0 3px var(--soft);background:var(--card)}
+.bad input,.bad select,.bad textarea{border-color:var(--err)}
+.bad .chips,.bad .tiles{outline:1px solid var(--err);outline-offset:5px;border-radius:10px}
+.em{display:none;color:var(--err);font-size:12.5px;margin-top:7px}.bad .em{display:block}
+textarea{min-height:92px;resize:vertical}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{padding:10px 16px;border-radius:8px;background:var(--soft2);border:1px solid var(--line);font-size:14.5px;cursor:pointer;user-select:none;transition:all .15s}
+.chip:hover,.tile:hover{border-color:var(--acc)}
+.chip.on,.tile.on{background:var(--sel);color:var(--onsel);border-color:var(--sel)}
+.tiles{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.tiles.list{grid-template-columns:1fr}
+.tile{padding:14px 16px;border-radius:10px;background:var(--soft2);border:1px solid var(--line);cursor:pointer;user-select:none;font-weight:500;font-size:15px;transition:all .15s}
+.tile small{display:block;font-weight:400;font-size:13px;color:var(--mute);margin-top:2px}
+.tile.on small{color:inherit;opacity:.75}
+.rng{display:flex;align-items:center;gap:14px}
+input[type=range]{padding:0;height:4px;border:0;background:var(--line);border-radius:9px;box-shadow:none;accent-color:var(--acc)}
+.rv{min-width:60px;text-align:center;font-weight:600;background:var(--sel);color:var(--onsel);border-radius:8px;padding:6px 8px;font-size:14px}
+.rl{display:flex;justify-content:space-between;font-size:12px;color:var(--mute);margin-top:6px;padding-right:74px}
+.nav{position:sticky;bottom:0;display:flex;gap:10px;margin:6px -22px 0;padding:14px 22px calc(18px + env(safe-area-inset-bottom,0px));background:linear-gradient(to top,var(--card) 80%,transparent)}
+button{font:500 15.5px Inter,system-ui,sans-serif;padding:15px 22px;border-radius:10px;border:0;cursor:pointer;transition:all .15s}
+.pri{background:var(--sel);color:var(--onsel);flex:1}.pri:hover{opacity:.9}
+.sec{background:var(--soft);color:var(--ink)}.sec:hover{background:var(--line)}
+.hero{background:linear-gradient(150deg,#0d1421 0%,#1a2742 100%);color:#fff;padding:34px 24px 26px;border:0}
+.eyebrow{font-size:12px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:#9fb4d0}
+.hero h1{margin:12px 0;font-size:clamp(28px,7vw,36px);line-height:1.15;font-weight:600;letter-spacing:-.6px}
+.hero .sub{color:#b8c6d8;margin:0 0 26px;max-width:46ch}
+.feat{display:grid;gap:0;margin-bottom:26px;border-top:1px solid rgba(255,255,255,.14)}
+.feat div{display:flex;gap:16px;padding:15px 0;border-bottom:1px solid rgba(255,255,255,.14);align-items:baseline}
+.feat b{font-size:13px;font-weight:500;color:#9fb4d0;letter-spacing:1px}
+.feat strong{display:block;font-weight:500;font-size:15.5px}.feat span{font-size:13.5px;color:#b8c6d8}
+.hero button{background:var(--hbtn);color:var(--onh);width:100%}
+.note{text-align:center;color:#9fb4d0;font-size:12.5px;margin:14px 0 0}
+.sum{display:grid;gap:12px;margin-bottom:8px}
+.sc{border:1px solid var(--line);border-radius:12px;background:var(--soft2);padding:14px 16px}
+.sh{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
+.sh b{font-size:12px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--acc)}
+.sh a{font-size:13px;font-weight:500;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.kv{display:flex;gap:12px;padding:7px 0;border-top:1px solid var(--line);font-size:14px}
+.kv span{flex:0 0 38%;color:var(--mute)}.kv em{font-style:normal;word-break:break-word}
+.foot{text-align:center;font-size:11.5px;color:var(--mute);margin-top:18px;letter-spacing:1.2px;text-transform:uppercase}
+@media(min-width:560px){.cb{padding:30px 36px 0}.ch{padding:32px 36px}.nav{margin:6px -36px 0;padding:14px 36px 24px}.tiles.list{grid-template-columns:1fr 1fr}.tiles{grid-template-columns:repeat(4,1fr)}.tiles.list{grid-template-columns:1fr 1fr}.hero{padding:44px 40px 34px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top"><div class="brand"><div class="mark">A</div><div><div class="bn">AGEKASRI</div><div class="bt">Fitness Coaching</div></div></div><div class="badge" id="bd">About 4 min</div></div>
+  <div class="prog" id="pg" style="display:none"><div class="segs" id="sg"></div><div class="pl"><span id="pl1"></span><span id="pl2"></span></div></div>
+  <div class="card" id="c"></div>
+  <div class="foot">Agekasri · Personal coaching, built around you</div>
+</div>
+<script>
+// COACH SETTING: your WhatsApp number with country code, digits only (e.g. 919876543210)
+var COACH_WA = "";
+var D = {}, n = -1, c = document.getElementById("c"), KEY = "agk_onb_v2";
+var S = [
+ {t:"About you",s:"We'll start with the basics so I know who I'm working with.",f:[
+  {k:"name",l:"Full name",r:1,ph:"Your full name"},{k:"wa",l:"WhatsApp number",r:1,ph:"+91 98765 43210",ty:"tel",v:"phone"},
+  {k:"age",l:"Age",ty:"number",h:1,ph:"e.g. 28"},{k:"gender",l:"Gender",ty:"sel",o:["Female","Male","Prefer not to say"],h:1},
+  {k:"city",l:"City",ph:"Where are you based?"},{k:"email",l:"Email",ty:"email",ph:"Optional"}]},
+ {t:"Your goals",s:"Clear goals lead to a clear plan.",f:[
+  {k:"goal",l:"What is your primary goal?",ty:"tile",r:1,o:["Fat loss|Reduce body fat and keep your strength","Muscle gain|Build lean muscle and size","Toning|Firmer, more defined physique","Strength|Get stronger and lift more","Stamina|Better endurance and energy","Post-pregnancy|Safe, steady recovery","General health|Feel better, move better"]},
+  {k:"tw",l:"Target weight (kg)",ty:"number",h:1,ph:"e.g. 62"},{k:"tl",l:"Timeline",ty:"sel",o:["4 weeks","8 weeks","12 weeks","6 months","No rush"],h:1},
+  {k:"why",l:"Why now?",ty:"area",ph:"What is driving this change for you?"},{k:"past",l:"What have you tried before?",ty:"area",ph:"And what didn't work?"}]},
+ {t:"Body & health",s:"This helps me train you safely and effectively.",f:[
+  {k:"ht",l:"Height (cm)",ty:"number",h:1,ph:"e.g. 165"},{k:"wt",l:"Current weight (kg)",ty:"number",h:1,ph:"e.g. 70"},
+  {k:"lvl",l:"Fitness level",ty:"chip",o:["Beginner","Some experience","Intermediate","Advanced"]},
+  {k:"where",l:"Where will you work out?",ty:"tile",o:["Home","Gym","Outdoors","Mix"]},
+  {k:"eq",l:"Equipment available",ty:"chip",m:1,o:["None","Dumbbells","Resistance bands","Barbell","Full gym","Yoga mat"]},
+  {k:"inj",l:"Injuries, medical conditions or medication",ty:"area",ph:"Write 'None' if not applicable",r:1}]},
+ {t:"Food & nutrition",s:"Your plan should fit your plate, not fight it.",f:[
+  {k:"diet",l:"Diet type",ty:"chip",o:["Vegetarian","Eggetarian","Non-vegetarian","Vegan","Jain"],r:1},
+  {k:"fav",l:"Favourite foods and meals",ty:"area",ph:"What do you genuinely enjoy eating?"},
+  {k:"dis",l:"Dislikes and allergies",ty:"area",ph:"Anything you won't or can't eat"},
+  {k:"crav",l:"Your weak spots",ty:"chip",m:1,o:["Sweets","Fried food","Late-night snacking","Chai & biscuits","Junk food","Cold drinks"]},
+  {k:"meals",l:"Meals per day",ty:"sel",o:["2","3","4","5+"],h:1},{k:"out",l:"Eating out / ordering in",ty:"sel",o:["Rarely","1–2 times a week","3–4 times a week","Almost daily"],h:1},
+  {k:"water",l:"Water per day",ty:"sel",o:["Under 1 L","1–2 L","2–3 L","3 L+"],h:1},{k:"sup",l:"Supplements",ph:"If any",h:1}]},
+ {t:"Your schedule",s:"I'll build your plan around your real day.",f:[
+  {k:"wake",l:"Wake-up time",ty:"time",h:1},{k:"sleep",l:"Bedtime",ty:"time",h:1},
+  {k:"work",l:"Daily routine",ty:"chip",o:["Desk job","On my feet","Work from home","Student","Homemaker","Shifts"]},
+  {k:"bf",l:"Breakfast",ty:"time",h:1},{k:"ln",l:"Lunch",ty:"time",h:1},
+  {k:"dn",l:"Dinner",ty:"time",h:1},{k:"wt2",l:"Best workout time",ty:"sel",o:["Early morning","Morning","Afternoon","Evening","Night"],h:1},
+  {k:"days",l:"Days you can train",ty:"chip",m:1,o:["Mon","Tue","Wed","Thu","Fri","Sat","Sun"]},
+  {k:"len",l:"Session length",ty:"chip",o:["20–30 min","30–45 min","45–60 min","60+ min"]}]},
+ {t:"Mindset",s:"Last step. Honest answers get the best results.",f:[
+  {k:"chal",l:"Biggest challenges",ty:"chip",m:1,o:["Consistency","Time","Motivation","Emotional eating","Stress","Low energy","Travel / events"]},
+  {k:"mot",l:"Commitment level",ty:"range"},
+  {k:"more",l:"Anything else I should know?",ty:"area"}]}
+];
+var LB={name:"Name",wa:"WhatsApp",age:"Age",gender:"Gender",city:"City",email:"Email",goal:"Goal",tw:"Target weight (kg)",tl:"Timeline",why:"Why now",past:"Tried before",ht:"Height (cm)",wt:"Weight (kg)",lvl:"Level",where:"Workout place",eq:"Equipment",inj:"Injuries / medical",diet:"Diet",fav:"Favourite foods",dis:"Dislikes / allergies",crav:"Weak spots",meals:"Meals per day",out:"Eating out",water:"Water",sup:"Supplements",wake:"Wake-up",sleep:"Bedtime",work:"Routine",bf:"Breakfast",ln:"Lunch",dn:"Dinner",wt2:"Best workout time",days:"Training days",len:"Session length",chal:"Challenges",mot:"Commitment",more:"Notes"};
+try{var sv=localStorage.getItem(KEY);if(sv)D=JSON.parse(sv)||{}}catch(e){}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(D))}catch(e){}}
+function esc(x){return String(x==null?"":x).replace(/[&<>"]/g,function(m){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[m]})}
+function has(v){return v&&(Array.isArray(v)?v.length:String(v).trim())}
+function fld(f){
+  var v=D[f.k],h='<div class="f" data-f="'+f.k+'"><label>'+f.l+(f.r?' <span class="req">*</span>':(f.ty=="chip"||f.ty=="tile"||f.ty=="range"?'':' <span class="opt-l">(optional)</span>'))+'</label>',ty=f.ty;
+  if(ty=="chip"||ty=="tile"){var t=ty=="tile",ls=t&&f.o[0].indexOf("|")>-1;h+='<div class="'+(t?'tiles'+(ls?' list':''):'chips')+'">'+f.o.map(function(o){var p=o.split("|"),lab=p[0],on=f.m?(v||[]).indexOf(lab)>-1:v==lab;return '<div class="'+(t?'tile':'chip')+(on?' on':'')+'" data-k="'+f.k+'" data-m="'+(f.m?1:0)+'" data-v="'+esc(lab)+'">'+lab+(p[1]?'<small>'+p[1]+'</small>':'')+'</div>'}).join('')+'</div>';}
+  else if(ty=="sel"){h+='<select data-k="'+f.k+'"><option value="">Select</option>'+f.o.map(function(o){return '<option'+(v==o?' selected':'')+'>'+o+'</option>'}).join('')+'</select>';}
+  else if(ty=="area"){h+='<textarea data-k="'+f.k+'" placeholder="'+esc(f.ph||'')+'">'+esc(v)+'</textarea>';}
+  else if(ty=="range"){v=v||5;D[f.k]=v;h+='<div class="rng"><input type="range" min="1" max="10" value="'+v+'" data-k="'+f.k+'"><span class="rv" id="rv">'+v+' / 10</span></div><div class="rl"><span>Getting started</span><span>All in</span></div>';}
+  else{h+='<input type="'+(ty||'text')+'"'+(ty=="number"?' inputmode="decimal"':'')+' data-k="'+f.k+'" value="'+esc(v)+'" placeholder="'+esc(f.ph||'')+'" autocomplete="off">';}
+  return h+'<div class="em">'+(f.v=="phone"?'Please enter a valid number':'This field is required')+'</div></div>';
+}
+function bar(){
+  var pg=document.getElementById("pg");if(n<0){pg.style.display="none";return}pg.style.display="block";
+  var h="",i;for(i=0;i<=S.length;i++)h+='<i class="'+(i<n?'d':i==n?'a':'')+'"></i>';document.getElementById("sg").innerHTML=h;
+  document.getElementById("pl1").textContent=n<S.length?"Step "+(n+1)+" of "+S.length+" · "+S[n].t:"Final review";
+  document.getElementById("pl2").textContent=Math.round(n/S.length*100)+"% complete";
+  document.getElementById("bd").textContent=n<S.length?(S.length-n)+" min left":"Almost done";
+}
+function render(){
+  bar();c.style.animation="none";void c.offsetWidth;c.style.animation="";
+  if(n<0){var st=Object.keys(D).length>2;
+    c.className="card hero";c.innerHTML='<div class="eyebrow">Client onboarding</div><h1>Let\'s design a plan around your life.</h1><p class="sub">A few focused questions about your goals, your food and your daily routine. Everything your coach builds will come from your answers.</p><div class="feat"><div><b>01</b><span><strong>Your goals</strong>What you want to achieve, and by when</span></div><div><b>02</b><span><strong>Your food</strong>Your tastes, habits and challenges</span></div><div><b>03</b><span><strong>Your schedule</strong>Meal timings and training slots</span></div></div><button onclick="go(1)">'+(st?'Continue where you left off':'Begin onboarding')+'</button><p class="note">About 4 minutes · Your information stays private</p>';return}
+  c.className="card";
+  if(n<S.length){var s=S[n],i,f,h='<div class="ch"><h2>'+s.t+'</h2><p>'+s.s+'</p></div><div class="cb">';
+    for(i=0;i<s.f.length;i++){f=s.f[i];if(f.h&&s.f[i+1]&&s.f[i+1].h){h+='<div class="row">'+fld(f)+fld(s.f[++i])+'</div>'}else h+=fld(f)}
+    c.innerHTML=h+'<div class="nav"><button class="sec" onclick="go(-1)">Back</button><button class="pri" onclick="go(1)">'+(n==S.length-1?'Review answers':'Continue')+'</button></div></div>';return}
+  var h='<div class="ch"><h2>Review and send</h2><p>Check that everything looks right, then send it to your coach.</p></div><div class="cb"><div class="sum">';
+  S.forEach(function(s,i){var r="";s.f.forEach(function(f){var v=D[f.k];if(has(v))r+='<div class="kv"><span>'+LB[f.k]+'</span><em>'+esc(Array.isArray(v)?v.join(", "):v)+(f.k=="mot"?" / 10":"")+'</em></div>'});h+='<div class="sc"><div class="sh"><b>'+s.t+'</b><a onclick="n='+i+';render()">Edit</a></div>'+r+'</div>'});
+  c.innerHTML=h+'</div><div class="nav"><button class="sec" onclick="cp()" id="cb">Copy</button><button class="pri" onclick="wa()">Send on WhatsApp</button></div></div>';
+}
+function valid(){
+  var s=S[n],ok=1,first=null;
+  s.f.forEach(function(f){var el=c.querySelector('[data-f="'+f.k+'"]'),v=D[f.k],bad=0;
+    if(f.r&&!has(v))bad=1;if(f.v=="phone"&&has(v)&&String(v).replace(/\D/g,"").length<8)bad=1;
+    if(el){el.classList.toggle("bad",!!bad)}if(bad){ok=0;if(!first)first=el}});
+  if(first)first.scrollIntoView({behavior:"smooth",block:"center"});return ok;
+}
+function go(d){if(d>0&&n>=0&&n<S.length&&!valid())return;n+=d;render();window.scrollTo({top:0,behavior:"smooth"})}
+c.addEventListener("click",function(e){var t=e.target.closest(".chip,.tile");if(!t)return;var k=t.dataset.k,v=t.dataset.v;
+  if(t.dataset.m=="1"){var a=D[k]||[],i=a.indexOf(v);i>-1?a.splice(i,1):a.push(v);D[k]=a}else D[k]=D[k]==v?"":v;
+  [].forEach.call(t.parentNode.children,function(x){x.classList.toggle("on",x.dataset.m=="1"?(D[k]||[]).indexOf(x.dataset.v)>-1:D[k]==x.dataset.v)});
+  var fe=t.closest(".f");if(fe)fe.classList.remove("bad");save()});
+function inp(e){var t=e.target;if(t.dataset&&t.dataset.k){D[t.dataset.k]=t.value;if(t.type=="range")document.getElementById("rv").textContent=t.value+" / 10";var fe=t.closest(".f");if(fe&&has(t.value))fe.classList.remove("bad");save()}}
+c.addEventListener("input",inp);c.addEventListener("change",inp);
+c.addEventListener("keydown",function(e){if(e.key=="Enter"&&e.target.tagName=="INPUT"&&n>=0&&n<S.length){e.preventDefault();go(1)}});
+function summary(){var o=["AGEKASRI — CLIENT ONBOARDING",""];
+  S.forEach(function(s){o.push(s.t.toUpperCase());s.f.forEach(function(f){var v=D[f.k];if(has(v))o.push(LB[f.k]+": "+(Array.isArray(v)?v.join(", "):v+(f.k=="mot"?"/10":"")))});o.push("")});return o.join("\n").trim()}
+function cp(){var b=document.getElementById("cb");try{navigator.clipboard.writeText(summary()).then(function(){b.textContent="Copied"},function(){b.textContent="Copy failed"})}catch(e){b.textContent="Copy failed"}}
+function wa(){window.open("https://wa.me/"+COACH_WA+"?text="+encodeURIComponent(summary()),"_blank")}
+render();
+</script>
+</body>
+</html>
