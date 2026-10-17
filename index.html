@@ -15,7 +15,7 @@ body{margin:0;color:var(--ink);font:16px/1.55 Inter,system-ui,-apple-system,"Seg
 .wl .top{position:absolute;top:0;left:0;right:0;padding:max(20px,env(safe-area-inset-top)) 28px;margin:0}
 .wi{width:100%;max-width:680px;animation:in .6s cubic-bezier(.2,.7,.2,1)}
 .wey,.ey{font-size:11px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:var(--gold)}.wey{margin-bottom:20px}.ey{margin-bottom:10px}
-.wi h1{margin:0 0 18px;font-size:clamp(36px,7.2vw,64px);line-height:1.04;font-weight:400;letter-spacing:-.04em}
+.wi h1{margin:0 0 40px;font-size:clamp(36px,7.2vw,64px);line-height:1.04;font-weight:400;letter-spacing:-.04em}
 h1 em{font-style:normal;color:#ff6470}
 .wsb{margin:0 0 34px;color:var(--mute);font-size:clamp(15.5px,2vw,18px);max-width:54ch;font-weight:400}
 .pil{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin:0 0 42px}
@@ -35,12 +35,11 @@ h1 em{font-style:normal;color:#ff6470}
 .segs{display:flex;gap:5px}.segs i{flex:1;height:3px;border-radius:9px;background:rgba(150,172,214,.14);transition:all .35s}.segs i.d{background:var(--red);box-shadow:0 0 10px rgba(160,25,45,.45)}.segs i.a{background:rgba(160,25,45,.5)}
 .pl{display:flex;justify-content:space-between;font-size:12.5px;color:var(--mute);margin-top:9px}
 .card{position:relative;background:linear-gradient(180deg,#0d1730,#081022);border:1px solid var(--line);border-radius:20px;box-shadow:0 30px 80px rgba(0,0,0,.55);overflow:hidden;animation:in .4s ease}
-.card::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:var(--gold);opacity:.5;z-index:1}
 @keyframes in{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
 .ch{background:linear-gradient(135deg,#0a1531,#111f47);border-bottom:1px solid var(--gl);padding:30px 24px}
 .ch h2{margin:0 0 8px;font-size:26px;line-height:1.2;font-weight:500;letter-spacing:-.02em}
 .ch p{margin:0;color:var(--mute);font-size:15px;font-weight:400;max-width:52ch}
-.cb{padding:28px 24px 0}
+.cb{padding:30px 24px 0}
 .f{margin-bottom:26px}
 label{display:block;font-weight:500;font-size:13.5px;margin-bottom:9px;letter-spacing:.2px}
 .req{color:var(--gold)}.opt-l{color:var(--dim);font-weight:400;font-size:12.5px}
@@ -86,11 +85,11 @@ button{font:500 15.5px Inter,system-ui,sans-serif;padding:16px 24px;border-radiu
 .sh{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
 .sh b{font-size:11px;font-weight:500;letter-spacing:2.4px;text-transform:uppercase;color:var(--gold)}
 .sh a{font-size:13px;cursor:pointer;text-decoration:underline;text-underline-offset:3px;color:var(--mute)}.sh a:hover{color:var(--gold)}
-.kv{display:flex;gap:12px;padding:7px 0;border-top:1px solid var(--line);font-size:14px}
+.kv{display:flex;gap:12px;padding:6px 0;font-size:14px}
 .kv span{flex:0 0 38%;color:var(--mute)}.kv em{font-style:normal;word-break:break-word}
 .th{display:flex;gap:8px}.th i{flex:1;aspect-ratio:3/4;border-radius:9px;background:rgba(150,172,214,.14) center/cover}
 .ok{text-align:center;padding:48px 26px 40px}.ok svg{width:62px;height:62px;margin-bottom:18px;stroke:var(--gold)}.ok h2{margin:0 0 12px;font-size:30px;font-weight:400;letter-spacing:-.03em}.ok h2 em{font-style:normal;color:#ff6470}.ok p{color:var(--mute);margin:0 auto 10px;max-width:46ch;font-weight:400}
-.nx{text-align:left;max-width:440px;margin:30px auto 0;border-top:1px solid var(--gl)}.nx div{display:flex;gap:16px;padding:15px 0;border-bottom:1px solid var(--line)}.nx b{color:var(--gold);font-size:12.5px;letter-spacing:1.2px;font-weight:500;padding-top:2px}.nx strong{display:block;font-weight:500;font-size:15px}.nx span{font-size:13.5px;color:var(--mute)}
+.nx{text-align:left;max-width:440px;margin:30px auto 0}.nx div{display:flex;gap:16px;padding:14px 0}.nx b{color:var(--gold);font-size:12.5px;letter-spacing:1.2px;font-weight:500;padding-top:2px}.nx strong{display:block;font-weight:500;font-size:15px}.nx span{font-size:13.5px;color:var(--mute)}
 .foot{text-align:center;font-size:11px;color:var(--dim);margin-top:22px;letter-spacing:2.4px;text-transform:uppercase}
 @media(max-width:600px){.bn{letter-spacing:1px}.pg{grid-template-columns:1fr 1fr}.wl .top{padding-left:20px;padding-right:20px}.pil{grid-template-columns:1fr;gap:20px}.ch{padding:26px 20px}.cb{padding:24px 20px 0}.nav{margin:6px -20px 0;padding:14px 20px calc(18px + env(safe-area-inset-bottom,0px))}}
 @media(max-width:420px){.row{grid-template-columns:1fr}}
@@ -100,7 +99,7 @@ button{font:500 15.5px Inter,system-ui,sans-serif;padding:16px 24px;border-radiu
 <body>
 <section class="wl" id="wl">
   <div class="top"><div class="brand"><div class="mark">KS</div><div class="bn">Handled by Kali Srivastava</div></div></div>
-  <div class="wi"><div class="wey">Private coaching · Onboarding</div><h1>Your transformation, <em>designed around you.</em></h1><p class="wsb">A bespoke plan begins with a few thoughtful answers about your goals, your body, your food and your daily rhythm, plus four private photos so every change can be measured properly. Everything is reviewed personally by your coach.</p><div class="pil"><div><b>Bespoke</b><span>Built entirely around your goals, food and schedule</span></div><div><b>Personal</b><span>Reviewed by your coach, never by a template</span></div><div><b>Confidential</b><span>Your answers and photos stay strictly private</span></div></div><div class="wact"><button class="wbtn" id="wb" onclick="go(1)">Begin</button><span class="hint">press <b>Enter ↵</b></span></div><div class="fine">About 5 minutes · Saved as you go</div></div>
+  <div class="wi"><div class="wey">Private coaching · Onboarding</div><h1>Your transformation, <em>designed around you.</em></h1><div class="wact"><button class="wbtn" id="wb" onclick="go(1)">Begin</button><span class="hint">press <b>Enter ↵</b></span></div><div class="fine">About 5 minutes · Saved as you go</div></div>
 </section>
 <div class="wrap" id="wr">
   <div class="top"><div class="brand"><div class="mark">KS</div><div><div class="bn">Handled by Kali Srivastava</div><div class="bt">Onboarding Form</div></div></div><div class="badge" id="bd">About 5 min</div></div>
@@ -163,7 +162,7 @@ function fld(f){
   return h+'<div class="em">'+(f.v=="phone"?'Please enter a valid number':f.v=="email"?'Please enter a valid email address':'This field is required')+'</div></div>';
 }
 function photos(){
-  var h='<div class="ch"><div class="ey">Chapter VII</div><h2>Your starting point</h2><p>Four private photos, so every change can be measured and celebrated.</p></div><div class="cb"><div class="lock"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 018 0v4"/></svg><div><b>Your photos are strictly confidential.</b> Only I, your coach, will ever see them. They are used only to understand your starting point and track your progress. Never shared, never posted, and I will delete them whenever you ask.</div></div><div class="f" data-f="photos"><div class="pg">';
+  var h='<div class="cb"><div class="lock"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 018 0v4"/></svg><div><b>Your photos are strictly confidential.</b> Only I, your coach, will ever see them. They are used only to understand your starting point and track your progress. Never shared, never posted, and I will delete them whenever you ask.</div></div><div class="f" data-f="photos"><div class="pg">';
   PH.forEach(function(p){var k=p[0];h+='<div class="ph"><div class="pv" id="pv-'+k+'"'+(P[k]?' style="background-image:url('+P[k]+')"':'')+'>'+(P[k]?'':p[1])+'</div><div class="pb"><b>'+p[1]+'</b><small>'+p[2]+'</small><div class="bt2"><label class="b2">Camera<input type="file" accept="image/*" capture="environment" hidden data-p="'+k+'"></label><label class="b2">Gallery<input type="file" accept="image/*" hidden data-p="'+k+'"></label></div></div></div>'});
   return h+'</div><div class="em">Please add all four photos, or choose the WhatsApp option below.</div></div><p class="tip">Wear fitted clothing, stand straight in good lighting, camera at waist height, 6–8 feet away.</p><a class="skip" onclick="D.skip=1;save();go(1)">I\'d rather send my photos privately on WhatsApp</a><div class="nav"><button class="sec" onclick="go(-1)">Back</button><button class="pri" onclick="go(1)">Review answers</button></div></div>';
 }
@@ -180,10 +179,10 @@ function render(q){
   bar();if(!q){c.style.animation="none";void c.offsetWidth;c.style.animation=""}
   c.className="card";var h,s,i,f;
   if(n<S.length&&S[n].ph){c.innerHTML=photos();return}
-  if(n<S.length){s=S[n];h='<div class="ch"><div class="ey">Chapter '+['I','II','III','IV','V','VI','VII'][n]+'</div><h2>'+s.t+'</h2><p>'+s.s+'</p></div><div class="cb">';
+  if(n<S.length){s=S[n];h='<div class="cb">';
     for(i=0;i<s.f.length;i++){f=s.f[i];if(f.h&&s.f[i+1]&&s.f[i+1].h)h+='<div class="row">'+fld(f)+fld(s.f[++i])+'</div>';else h+=fld(f)}
     c.innerHTML=h+'<div class="nav"><button class="sec" onclick="go(-1)">Back</button><button class="pri" onclick="go(1)">Continue</button></div></div>';return}
-  if(n==S.length){h='<div class="ch"><div class="ey">Final step</div><h2>Your profile, at a glance</h2><p>Please review your details before submitting them to your coach.</p></div><div class="cb"><div class="sum">';
+  if(n==S.length){h='<div class="cb"><div class="sum">';
     S.forEach(function(s,i){var r="";if(s.ph)r=D.skip&&!P.front?'<div class="kv"><span>Photos</span><em>Will be sent privately on WhatsApp</em></div>':'<div class="th">'+PH.map(function(p){return '<i style="background-image:url('+(P[p[0]]||"")+')"></i>'}).join('')+'</div>';
       else s.f.forEach(function(f){if(has(D[f.k]))r+='<div class="kv"><span>'+f.l+'</span><em>'+esc(fmt(f))+'</em></div>'});
       h+='<div class="sc"><div class="sh"><b>'+s.t+'</b><a onclick="n='+i+';render()">Edit</a></div>'+r+'</div>'});
