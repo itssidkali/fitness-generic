@@ -14,17 +14,17 @@ body{margin:0;color:var(--ink);font:16px/1.55 Inter,system-ui,-apple-system,"Seg
 .wl{position:fixed;inset:0;height:100vh;height:100dvh;display:none;align-items:center;justify-content:center;padding:0 24px;overflow:hidden;z-index:10}
 body.wb,html:has(body.wb){overflow:hidden;height:100%;overscroll-behavior:none}
 .wl .top{position:absolute;top:0;left:0;right:0;padding:max(20px,env(safe-area-inset-top)) 28px;margin:0}
-.wi{width:100%;max-width:680px;animation:in .6s cubic-bezier(.2,.7,.2,1)}
-.wey,.ey{font-size:11px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:var(--gold)}.wey{margin-bottom:20px}.ey{margin-bottom:10px}
-.wi h1{margin:0 0 40px;font-size:clamp(36px,7.2vw,64px);line-height:1.04;font-weight:400;letter-spacing:-.04em}
+.wi{width:100%;max-width:560px;text-align:center;animation:in .6s cubic-bezier(.2,.7,.2,1)}
+.wey,.ey{font-size:11px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:var(--gold)}.wey{margin-bottom:24px;font-size:12.5px;letter-spacing:3.4px}.ey{margin-bottom:10px}
+.wi h1{margin:0 0 48px;font-size:clamp(40px,9.5vw,78px);line-height:1.05;font-weight:500;letter-spacing:-.04em}
 h1 em{font-style:normal;color:#ff6470}
 .wsb{margin:0 0 34px;color:var(--mute);font-size:clamp(15.5px,2vw,18px);max-width:54ch;font-weight:400}
 .pil{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin:0 0 42px}
 .pil div{padding:0}
 .pil b{display:block;font-size:11px;letter-spacing:2.2px;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:6px}.pil span{font-size:13.5px;color:var(--mute);line-height:1.45;display:block}
-.wact{display:flex;align-items:center;gap:18px}
+.wact{display:flex;flex-direction:column;align-items:center;gap:16px;width:100%}
 .hint{font-size:13px;color:var(--dim)}.hint b{font-weight:500;color:var(--mute)}@media(hover:none){.hint{display:none}}
-.fine{margin-top:26px;font-size:12.5px;color:var(--dim);letter-spacing:.3px}
+.fine{margin-top:30px;font-size:13.5px;color:var(--dim);letter-spacing:.3px}
 .wrap{max-width:700px;margin:0 auto;padding:20px 16px 28px}
 .top{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
 .brand{display:flex;align-items:center;gap:13px}
@@ -67,7 +67,7 @@ input[type=range]{width:100%;height:3px;border:0;padding:0;background:rgba(150,1
 .nav{position:sticky;bottom:0;display:flex;gap:10px;margin:6px -24px 0;padding:16px 24px calc(20px + env(safe-area-inset-bottom,0px));background:linear-gradient(to top,#081022 78%,transparent)}
 button{font:500 15.5px Inter,system-ui,sans-serif;padding:16px 24px;border-radius:12px;border:0;cursor:pointer;transition:all .2s;position:relative;overflow:hidden}
 .pri,.wbtn{background:var(--btn);color:#fff;font-weight:600;letter-spacing:.2px;box-shadow:0 10px 28px rgba(138,14,28,.55),inset 0 -2px 0 rgba(0,0,0,.25)}
-.pri{flex:1}.wbtn{padding:17px 34px;font-size:16px}
+.pri{flex:1}.wbtn{width:100%;padding:20px 24px;font-size:17px;border-radius:14px}
 .pri::after,.wbtn::after{content:"";position:absolute;top:0;bottom:0;width:45%;left:-60%;background:linear-gradient(105deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-18deg);animation:sh 4.8s ease-in-out infinite}
 @keyframes sh{0%,55%{left:-60%}100%{left:130%}}
 @media(prefers-reduced-motion:reduce){.pri::after,.wbtn::after{animation:none}}
